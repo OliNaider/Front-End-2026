@@ -1,11 +1,66 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html>
+  <head>
+    <title>Empanadas Don Oli</title>
+  </head>
+
+  <body class="bg-orange-50 text-gray-800">
+
+    <!-- HEADER -->
+    <header class="bg-red-800 text-white text-center p-6">
+      <h1 class="text-3xl font-bold"> Empanadas Don Oli</h1>
+      <p class="text-sm">Las mejores empanadas caseras</p>
+    </header>
+
+    <!-- NAV -->
+    <nav class="bg-red-600 text-white flex justify-center gap-6 p-4">
+      <a href="#nosotros" class="hover:underline">Nosotros</a>
+      <a href="#menu" class="hover:underline">Menú</a>
+      <a href="#contacto" class="hover:underline">Contacto</a>
+    </nav>
+
+    <!-- SECCIÓN 1 -->
+    <section id="nosotros" class="p-6 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-2">Sobre nosotros</h2>
+      <p>
+        Somos un local familiar dedicado a hacer empanadas artesanales con ingredientes frescos y recetas tradicionales.
+      </p>
+    </section>
+
+    <!-- SECCIÓN 2 -->
+    <section id="menu" class="p-6 bg-white max-w-3xl mx-auto rounded-xl shadow">
+      <h2 class="text-2xl font-bold mb-4">Menú</h2>
+
+      <ul class="space-y-2">
+        <li> Carne</li>
+        <li> Pollo</li>
+        <li> Jamón y queso</li>
+        <li> Humita</li>
+      </ul>
+
+      <button 
+        onclick="verPromo()" 
+        class="mt-4 bg-red-700 text-white px-4 py-2 rounded hover:bg-red-900"
+      >
+        Ver promoción
+      </button>
+    </section>
+
+    <!-- SECCIÓN 3 -->
+    <section id="contacto" class="p-6 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-2">Contacto</h2>
+      <p> Dirección: Calle Falsa 123</p>
+      <p> Teléfono: 1234-5678</p>
+    </section>
+
+    <script>
+      function verPromo() {
+        alert(" Promo: 12 empanadas al precio de 10!");
+      }
+    </script>
+
+  </body>
+</html>
