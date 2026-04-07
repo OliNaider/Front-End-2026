@@ -26,6 +26,7 @@ import "../styles/global.css";
     <!-- SECCIÓN 1 -->
     <section id="nosotros" class="p-6 max-w-3xl mx-auto">
       <h2 class="text-2xl font-bold mb-2">Sobre nosotros</h2>
+	  <img src="../../public/familia_empanadas.jpg" alt="Familia :P"/>
       <p>
         Somos un local familiar dedicado a hacer empanadas artesanales con ingredientes frescos y recetas tradicionales.
       </p>
@@ -36,11 +37,12 @@ import "../styles/global.css";
       <h2 class="text-2xl font-bold mb-4">Menú</h2>
 
       <ul class="space-y-2">
-        <li> Carne</li>
-        <li> Pollo</li>
-        <li> Jamón y queso</li>
-        <li> Humita</li>
+        <li class="cursor-pointer clase carne"> Carne</li>
+        <li class="cursor-pointer clase pollo"> Pollo</li>
+        <li class="cursor-pointer clase jyq"> Jamón y queso</li>
+        <li class="cursor-pointer clase humita"> Humita</li>
       </ul>
+	  <div class="mimi"></div>
 
       <button 
         onclick="verPromo()" 
@@ -61,6 +63,16 @@ import "../styles/global.css";
       function verPromo() {
         alert(" Promo: 12 empanadas al precio de 10!");
       }
+	  document.querySelectorAll('.clase').forEach((emp) =>{
+		emp.addEventListener('click', ()=>{
+			const imgChanger = document.querySelector('.mimi');
+			if (emp.classList.contains('pollo')){
+				imgChanger.innerHTML = `<img src="../../public/pollo.jpg" alt="empPollo" class="z-100 -mt-30 absolute"/>`;
+			} else{
+				imgChanger.innerHTML = '';
+			}
+		})
+	  })
     </script>
 
   </body>
