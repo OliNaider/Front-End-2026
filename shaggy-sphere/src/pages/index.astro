@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Promos from '../components/Promos.astro';
+import Promos from "../components/Promos.astro";
 ---
 
 <html>
@@ -36,22 +36,56 @@ import Promos from '../components/Promos.astro';
     <!-- SECCIÓN 2 -->
     <section id="menu" class="p-6 bg-white max-w-3xl mx-auto rounded-xl shadow">
       <h2 class="text-2xl font-bold mb-4">Menú</h2>
-      <div class="space-y-2">
-        <div>
-            <div class="front">
-              <p>Carne</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <!-- CARD -->
+        <div class="card">
+          <div class="card-inner">
+            
+            <!-- FRONT -->
+            <div class="card-front">
+              Carne
             </div>
-            <div class="back">
-              <img src="../../public/pollo.jpg" alt="PITOS">
+      
+            <!-- BACK -->
+            <div class="card-back">
+              <img src="/carne.jpg" class="w-full h-full object-cover rounded-xl"/>
             </div>
+      
+          </div>
         </div>
+      
+        <!-- POLLO -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">Pollo</div>
+            <div class="card-back">
+              <img src="/pollo.jpg" class="w-full h-full object-cover rounded-xl"/>
+            </div>
+          </div>
+        </div>
+      
+        <!-- JYQ -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">Jamón y queso</div>
+            <div class="card-back">
+              <img src="/JYQ.jpg" class="w-full h-full object-cover rounded-xl"/>
+            </div>
+          </div>
+        </div>
+      
+        <!-- HUMITA -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">Humita</div>
+            <div class="card-back">
+              <img src="/humita.jpg" class="w-full h-full object-cover rounded-xl"/>
+            </div>
+          </div>
+        </div>
+      
       </div>
-      <ul class="space-y-2">
-        <li class="cursor-pointer clase carne"> Carne</li>
-        <li class="cursor-pointer clase pollo"> Pollo</li>
-        <li class="cursor-pointer clase jyq"> Jamón y queso</li>
-        <li class="cursor-pointer clase humita"> Humita</li>
-      </ul>
 	  <div class="mimi"></div>
 
       <button 
