@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Promos from '../components/Promos.astro';
 ---
 
 <html>
@@ -9,7 +10,7 @@ import "../styles/global.css";
   </head>
 
   <body class="bg-orange-50 text-gray-800">
-
+    <Promos />
     <!-- HEADER -->
     <header class="bg-red-800 text-white text-center p-6">
       <h1 class="text-3xl font-bold"> Empanadas Porteñas</h1>
@@ -35,7 +36,16 @@ import "../styles/global.css";
     <!-- SECCIÓN 2 -->
     <section id="menu" class="p-6 bg-white max-w-3xl mx-auto rounded-xl shadow">
       <h2 class="text-2xl font-bold mb-4">Menú</h2>
-
+      <div class="space-y-2">
+        <div>
+            <div class="front">
+              <p>Carne</p>
+            </div>
+            <div class="back">
+              <img src="../../public/pollo.jpg" alt="PITOS">
+            </div>
+        </div>
+      </div>
       <ul class="space-y-2">
         <li class="cursor-pointer clase carne"> Carne</li>
         <li class="cursor-pointer clase pollo"> Pollo</li>
@@ -60,9 +70,12 @@ import "../styles/global.css";
     </section>
 
     <script is:inline>
+      const modal = document.getElementById("modal");
+      const span = modal.querySelector('span');
     function verPromo() {
-      alert("Promo: 12 empanadas al precio de 10!");
+      modal.classList.remove("hidden");
     }
+    span.addEventListener('click', ()=>{ modal.classList.add("hidden"); })
 
     window.addEventListener('DOMContentLoaded', () => {
       const imagenes = {
