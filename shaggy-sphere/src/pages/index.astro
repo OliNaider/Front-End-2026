@@ -59,21 +59,35 @@ import "../styles/global.css";
       <p> Teléfono: 1234-5678</p>
     </section>
 
-    <script>
-      function verPromo() {
-        alert(" Promo: 12 empanadas al precio de 10!");
-      }
-	  document.querySelectorAll('.clase').forEach((emp) =>{
-		emp.addEventListener('click', ()=>{
-			const imgChanger = document.querySelector('.mimi');
-			if (emp.classList.contains('pollo')){
-				imgChanger.innerHTML = `<img src="../../public/pollo.jpg" alt="empPollo" class="z-100 -mt-30 absolute"/>`;
-			} else{
-				imgChanger.innerHTML = '';
-			}
-		})
-	  })
-    </script>
+    <script is:inline>
+    function verPromo() {
+      alert("Promo: 12 empanadas al precio de 10!");
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const imagenes = {
+        carne: "/carne.jpg",
+        pollo: "/pollo.jpg",
+        jyq: "/jyq.jpg",
+        humita: "/humita.jpg"
+      };
+
+      document.querySelectorAll('.clase').forEach((emp) => {
+        emp.addEventListener('click', () => {
+          const imgChanger = document.querySelector('.mimi');
+
+          for (let tipo in imagenes) {
+            if (emp.classList.contains(tipo)) {
+              imgChanger.innerHTML = `
+                <img src="${imagenes[tipo]}" 
+                    class="mt-4 rounded-xl shadow-lg w-64"/>
+              `;
+            }
+          }
+        });
+      });
+    });
+  </script>
 
   </body>
 </html>
